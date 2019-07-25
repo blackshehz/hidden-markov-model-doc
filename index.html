@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hidden Markov Model Theory and Code &mdash; Hidden Markov Model 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> Hidden Markov Model
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Hidden Markov Model Theory and Code</a><ul>
+<li><a class="reference internal" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Hidden-markov-model</a><ul>
+<li><a class="reference internal" href="#id3">Mathematical formulation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">Input Output Hidden Markov Model (IOHMM)</a><ul>
+<li><a class="reference internal" href="#id5">Mathematical Formulation</a></li>
+<li><a class="reference internal" href="#hmm-code">HMM Code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Hidden Markov Model</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Hidden Markov Model Theory and Code</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hidden-markov-model-theory-and-code">
+<h1>Hidden Markov Model Theory and Code<a class="headerlink" href="#hidden-markov-model-theory-and-code" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#hidden-markov-model">Hidden-markov-model</a></p>
+<ul>
+<li><p><a class="reference external" href="#mathematical-formulation">Mathematical formulation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#input-output-hidden-markov-model-iohmm">Input Output Hidden Markov Model (IOHMM)</a></p>
+<ul>
+<li><p><a class="reference external" href="#mathematical-formulation">Mathematical Formulation</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h1>Hidden-markov-model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>Hidden Markov Model for predicting loan delay sequence</p>
+<div class="section" id="id3">
+<h2>Mathematical formulation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> be a set of active loan sequences, i.e. a sequence of number of active loans for a given month/year formatted as <span class="math notranslate nohighlight">\(MM-YYYY\)</span>. For every <span class="math notranslate nohighlight">\(s \in S\)</span>, there is corresponding final loan delay - average number of days for which loans have not been paid, denoted by <span class="math notranslate nohighlight">\(P_s\)</span>. For every sequence <span class="math notranslate nohighlight">\(s\)</span>, a state label <span class="math notranslate nohighlight">\(L_s\)</span> is assigned - which is the number of unique values in that sequence. Total number of unique labels in <span class="math notranslate nohighlight">\(P_s\)</span> (irrespective of loan sequence) is denoted by <span class="math notranslate nohighlight">\(D\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h1>Input Output Hidden Markov Model (IOHMM)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<p>Adding covariates <span class="math notranslate nohighlight">\(u_t\)</span> as a conditional input to state transition, and state emission probabilities.</p>
+<p>Using IOHMM library from - <a class="reference external" href="https://github.com/Mogeng/IOHMM/tree/python3-compatible">https://github.com/Mogeng/IOHMM/tree/python3-compatible</a></p>
+<div class="section" id="id5">
+<h2>Mathematical Formulation<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Possible variables for <span class="math notranslate nohighlight">\(u_t\)</span>:</p>
+<ul class="simple">
+<li><p>A 2D integer variable indicating number of loans that are secured or unsecured</p></li>
+<li><p>The number of loans currently active</p></li>
+<li><p>Binary variable indicating Guarantee Loan</p></li>
+<li><p>Month number</p></li>
+<li><p>Season (dependent on month) - use either one.</p></li>
+<li><p>General location - reported residential location - South India, North India, North-East India, North-West India</p></li>
+<li><p>Total loan balance - scaled</p></li>
+<li><p>Integer variable indicating number of major loans (greater than INR 1 lac) that were delinquent</p></li>
+<li><p>Truck lanes generally operated in</p></li>
+</ul>
+<p>Possible variables for output <span class="math notranslate nohighlight">\(x_t\)</span>:</p>
+<ul class="simple">
+<li><p>Payment delay - in number of days (bucketed)</p></li>
+</ul>
+</div>
+<div class="section" id="hmm-code">
+<h2>HMM Code<a class="headerlink" href="#hmm-code" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="HiddenMarkovModel.HiddenMarkovModel">
+<em class="property">class </em><code class="sig-prename descclassname">HiddenMarkovModel.</code><code class="sig-name descname">HiddenMarkovModel</code><span class="sig-paren">(</span><em class="sig-param">n_states</em>, <em class="sig-param">observations</em>, <em class="sig-param">tolerance=1e-06</em>, <em class="sig-param">max_iterations=10000</em>, <em class="sig-param">scaling=True</em>, <em class="sig-param">dirichlet=False</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">rand_seed=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HiddenMarkovModel.html#HiddenMarkovModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hidden Markov Model Class</p>
+<p>Implements 1st order Markov Model for discrete sequences only.</p>
+<p>HiddenMarkovModel Parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_states</strong> (<em>int</em>) – Number of states for this HMM model</p></li>
+<li><p><strong>observations</strong> (<em>np.array</em><em>(</em><em>int</em><em>)</em>) – Array of observations where each integer represents a different observation</p></li>
+</ul>
+</dd>
+</dl>
+<p>HiddenMarkovModel Hyper Parameres</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tolerance</strong> (<em>double</em>) – Convergence criteria for maximum log-likelihood, default 1e-6</p></li>
+<li><p><strong>max_iterations</strong> (<em>int</em>) – Maximum number of iterations for Expectation Maximization (EM), default 10000</p></li>
+<li><p><strong>scaling</strong> (<em>bool</em>) – Normalize transition and emission (observation) probabilities, default True</p></li>
+</ul>
+</dd>
+</dl>
+<p>HiddenMarkovModel Initialization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dirichlet</strong> (<em>bool</em>) – Initialisation using dirichlet distribution (all randoms sum to one), default True</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print iteration debug statements, default False</p></li>
+<li><p><strong>rand_seed</strong> (<em>int</em>) – Random seed to generate initial probabilities, default 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>HiddenMarkovModel object</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.BaumWelch">
+<code class="sig-name descname">BaumWelch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HiddenMarkovModel.html#HiddenMarkovModel.BaumWelch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.BaumWelch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.ModelParameters">
+<code class="sig-name descname">ModelParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HiddenMarkovModel.html#HiddenMarkovModel.ModelParameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.ModelParameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.Viterbi">
+<code class="sig-name descname">Viterbi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HiddenMarkovModel.html#HiddenMarkovModel.Viterbi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.Viterbi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.backward">
+<code class="sig-name descname">backward</code><span class="sig-paren">(</span><em class="sig-param">c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HiddenMarkovModel.html#HiddenMarkovModel.backward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.backward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HiddenMarkovModel.html#HiddenMarkovModel.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements HMM Forward algorithm</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Shehzaman Khatib
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
