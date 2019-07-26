@@ -273,6 +273,12 @@
 <code class="sig-name descname">BaumWelch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.BaumWelch" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.M">
+<code class="sig-name descname">M</code><em class="property"> = None</em><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.M" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of classes in obervation sequence</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="HiddenMarkovModel.HiddenMarkovModel.ModelParameters">
 <code class="sig-name descname">ModelParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.ModelParameters" title="Permalink to this definition">¶</a></dt>
@@ -283,6 +289,18 @@
 <code class="sig-name descname">Viterbi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.Viterbi" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.a">
+<code class="sig-name descname">a</code><em class="property"> = None</em><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.a" title="Permalink to this definition">¶</a></dt>
+<dd><p>a - state transition matrix. Size = n_states x n_states</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.b">
+<code class="sig-name descname">b</code><em class="property"> = None</em><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>b - emission probabilities for each state. Size = n_states x M</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="HiddenMarkovModel.HiddenMarkovModel.backward">
 <code class="sig-name descname">backward</code><span class="sig-paren">(</span><em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.backward" title="Permalink to this definition">¶</a></dt>
@@ -292,6 +310,12 @@
 <dt id="HiddenMarkovModel.HiddenMarkovModel.forward">
 <code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.forward" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements HMM Forward algorithm</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HiddenMarkovModel.HiddenMarkovModel.pi">
+<code class="sig-name descname">pi</code><em class="property"> = None</em><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.pi" title="Permalink to this definition">¶</a></dt>
+<dd><p>pi - initial state distribution. Size = n_states x 1</p>
 </dd></dl>
 
 </dd></dl>
