@@ -179,7 +179,7 @@
 </div>
 <div class="section" id="id2">
 <h1>Hidden-markov-model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
-<p>Hidden Markov Model for predicting loan delay sequence</p>
+<p>Hidden Markov Model for predicting loan delay sequence. This includes Input Output Hidden Markov Models as well</p>
 <div class="section" id="id3">
 <h2>Mathematical formulation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(S\)</span> be a set of active loan sequences, i.e. a sequence of number of active loans for a given month/year formatted as <span class="math notranslate nohighlight">\(MM-YYYY\)</span>. For every <span class="math notranslate nohighlight">\(s \in S\)</span>, there is corresponding final loan delay - average number of days for which loans have not been paid, denoted by <span class="math notranslate nohighlight">\(P_s\)</span>. For every sequence <span class="math notranslate nohighlight">\(s\)</span>, a state label <span class="math notranslate nohighlight">\(L_s\)</span> is assigned - which is the number of unique values in that sequence. Total number of unique labels in <span class="math notranslate nohighlight">\(P_s\)</span> (irrespective of loan sequence) is denoted by <span class="math notranslate nohighlight">\(D\)</span>.</p>
