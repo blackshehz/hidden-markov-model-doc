@@ -10,8 +10,6 @@ Hidden Markov Model Theory and Code
    :maxdepth: 2
    :caption: Contents:
 
-Theory
--------
 .. mdinclude:: ../README.md
 
 HMM Code
