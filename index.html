@@ -216,21 +216,26 @@
 <dd><p>Hidden Markov Model Class</p>
 <p>Implements 1st order Markov Model for discrete sequences only.</p>
 <p>Example use case</p>
-<p>:</p>
-<blockquote>
-<div><p>import numpy as np
-from HiddenMarkovModel import HiddenMarkovModel as hmm</p>
-<p>obs_sequence = np.array([0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 2, 1, 2, 0, 1, 2, 3, 1, 2, 4, 4, 3])</p>
-<p>hmm_model = hmm(n_states=5, observations=obs_sequence)</p>
-<p># Train hmm_model
-hmm_model.BaumWelch()</p>
-<p># Get most likely state path
-path, delta, phi = hmm_model.Viterbi()</p>
-<p># Transition Model
-hmm_model.a</p>
-<p># Emission Model
-hmm_model.b</p>
-</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">HiddenMarkovModel</span> <span class="kn">import</span> <span class="n">HiddenMarkovModel</span> <span class="k">as</span> <span class="n">hmm</span>
+
+<span class="n">obs_sequence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">hmm_model</span> <span class="o">=</span> <span class="n">hmm</span><span class="p">(</span><span class="n">n_states</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">observations</span><span class="o">=</span><span class="n">obs_sequence</span><span class="p">)</span>
+
+<span class="c1"># Train hmm_model</span>
+<span class="n">hmm_model</span><span class="o">.</span><span class="n">BaumWelch</span><span class="p">()</span>
+
+<span class="c1"># Get most likely state path</span>
+<span class="n">path</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">hmm_model</span><span class="o">.</span><span class="n">Viterbi</span><span class="p">()</span>
+
+<span class="c1"># Transition Model</span>
+<span class="n">hmm_model</span><span class="o">.</span><span class="n">a</span>
+
+<span class="c1"># Emission Model</span>
+<span class="n">hmm_model</span><span class="o">.</span><span class="n">b</span>
+</pre></div>
+</div>
 <p><strong>HiddenMarkovModel Parameters</strong></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
