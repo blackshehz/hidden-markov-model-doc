@@ -247,6 +247,28 @@
 <dd class="field-even"><p>HiddenMarkovModel object</p>
 </dd>
 </dl>
+<p>Example use case:</p>
+<p>docstring:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">HiddenMarkovModel</span> <span class="k">import</span> <span class="n">HiddenMarkovModel</span> <span class="k">as</span> <span class="n">hmm</span>
+
+<span class="n">obs_sequence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">hmm_model</span> <span class="o">=</span> <span class="n">hmm</span><span class="p">(</span><span class="n">n_states</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">observations</span><span class="o">=</span><span class="n">obs_sequence</span><span class="p">)</span>
+
+<span class="c1"># Train hmm_model</span>
+<span class="n">hmm_model</span><span class="o">.</span><span class="n">BaumWelch</span><span class="p">()</span>
+
+<span class="c1"># Get most likely state path</span>
+<span class="n">path</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">hmm_model</span><span class="o">.</span><span class="n">Viterbi</span><span class="p">()</span>
+
+<span class="c1"># Transition Model</span>
+<span class="n">hmm_model</span><span class="o">.</span><span class="n">a</span>
+
+<span class="c1"># Emission Model</span>
+<span class="n">hmm_model</span><span class="o">.</span><span class="n">b</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="HiddenMarkovModel.HiddenMarkovModel.BaumWelch">
 <code class="sig-name descname">BaumWelch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HiddenMarkovModel.HiddenMarkovModel.BaumWelch" title="Permalink to this definition">¶</a></dt>
